@@ -54,6 +54,8 @@
 //     email: "john.doe@example.com"
 // }
 
+// const {email, ...rest}=userInfo
+
 // const message = `Hello, my name is ${userInfo.name}`
 
 // console.log(message);
@@ -81,11 +83,11 @@
 // const isAdult=true
 
 // if(bouncerSay && isAdult){
-    //     console.log("You can enter the club")
-    // }else{
-        //     console.log("You cannot enter the club")
-        // }
-        
+//     console.log("You can enter the club")
+// }else{
+//     console.log("You cannot enter the club")
+// }
+
 // const bouncerSay=true
 // const age=21
 // if(age>=21){
@@ -102,3 +104,4 @@
 //     console.log("I have something in my pocket")
 //     console.log("You cannot enter the club")
 // }
+
