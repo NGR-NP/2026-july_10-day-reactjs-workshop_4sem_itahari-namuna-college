@@ -2,7 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 // import ReactComponent, { H1 } from './pages/home'
-import ProductsPage from './pages/products'
+// import ProductsPage from './pages/products'
+import CounterPage from './pages/counter/counter'
 
 createRoot(document.getElementById('main')!).render(
   <StrictMode>
@@ -11,6 +12,7 @@ createRoot(document.getElementById('main')!).render(
         Hello, it's me tezz
       </H1>
     </ReactComponent> */}
-    <ProductsPage/>
+    {/* <ProductsPage/> */}
+    <CounterPage/>
   </StrictMode>,
 )
