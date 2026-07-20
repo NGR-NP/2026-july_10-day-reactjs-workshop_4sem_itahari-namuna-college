@@ -1,26 +1,30 @@
-type Props = { title: string, description: string, img: string }
+import type React from "react"
 
-export default function Card({ title, description, img }: Props) {
+type Props = { productTitle: string, description: string, img: string }
+
+ 
+
+export default function Card(props: React.ComponentProps<"div">) {
     return (
-        <div className="card">
-            <CardHeader title={title} img={img} />
-            <CardBody description={description} />
-        </div>
+        <div className="card" {...props} />
     )
 }
 export function CardBody({ description }: Pick<Props, "description">) { // Pick: only pick description from Props type
     return (
-        <div className="card-body">
+        <div  className="card-body">
             <p>{description}</p>
         </div>
     )
 }
 
-export function CardHeader({ title, img }: Omit<Props, "description">) { // Omit: remove description from Props type
+interface CardHeaderProps extends Omit<Props, "description">, React.ComponentProps<"div"> { } // Omit: remove description from Props type
+ 
+
+export function CardHeader({ productTitle, img,...props }: CardHeaderProps) { // Omit: remove description from Props type
     return (
-        <div className="card-header">
-            <img src={img} alt={title} />
-            <h3>{title}</h3>
+        <div className="card-header" {...props}>
+            <img src={img} alt={productTitle} />
+            <h3>{productTitle}</h3>
         </div>
     )
 }
