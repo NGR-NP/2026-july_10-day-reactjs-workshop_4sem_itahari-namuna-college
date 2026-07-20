@@ -1,14 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import ReactComponent, { H1 } from './pages/home'
+// import ReactComponent, { H1 } from './pages/home'
+import ProductsPage from './pages/products'
 
 createRoot(document.getElementById('main')!).render(
   <StrictMode>
-    <ReactComponent style={{ backgroundColor: "blue" }}>
+    {/* <ReactComponent style={{ backgroundColor: "blue" }}>
       <H1  style={{ color: "red" }} >
         Hello, it's me tezz
       </H1>
-    </ReactComponent>
+    </ReactComponent> */}
+    <ProductsPage/>
   </StrictMode>,
 )

@@ -1,11 +1,12 @@
+import type React from "react"
 
 
-type TypeReactComponent =
-    { children?: React.ReactNode, style?: React.CSSProperties }
+type TypeReactComponent = React.ComponentProps<"div">
 
-const ReactComponent = ({children,style}: TypeReactComponent) => {
+
+const ReactComponent = ({children,...props}: TypeReactComponent) => {
     return (
-        <div style={style}>
+        <div {...props}>
             <h1>React + TypeScript + Vite</h1>
             {children}
         </div>
