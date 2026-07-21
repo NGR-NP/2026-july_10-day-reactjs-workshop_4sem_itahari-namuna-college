@@ -4,7 +4,12 @@ import "./styleInputForm.css";
 export default function PageInputForm() {
     function handleSubmit(e:React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        console.log("form submit", e)
+        const formData = new FormData(e.currentTarget);
+        console.log("form submitted");
+        const username = formData.get("username");
+        const password = formData.get("password");
+        console.log("username:", username);
+        console.log("password:", password);
     }
     return (
         <main>
