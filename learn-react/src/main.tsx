@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 // import ReactComponent, { H1 } from './pages/home'
 // import ProductsPage from './pages/products'
-import CounterPage from './pages/counter/counter'
+import PageInputForm from './pages/inputForm/PageInputForm'
 
 createRoot(document.getElementById('main')!).render(
   <StrictMode>
@@ -13,6 +13,7 @@ createRoot(document.getElementById('main')!).render(
       </H1>
     </ReactComponent> */}
     {/* <ProductsPage/> */}
-    <CounterPage/>
+    {/* <CounterPage/> */}
+    <PageInputForm/>
   </StrictMode>,
 )

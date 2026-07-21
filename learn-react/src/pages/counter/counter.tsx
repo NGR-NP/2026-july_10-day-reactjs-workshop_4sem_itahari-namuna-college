@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./counter.css"
 export default function CounterPage() {
-    const [value, updateValueFunction]=useState(1)
+    const [value, updateValueFunction]=useState(0)
 
     function handleIncrement() {
         updateValueFunction(value + 1)
