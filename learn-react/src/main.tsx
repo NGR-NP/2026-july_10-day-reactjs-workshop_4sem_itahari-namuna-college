@@ -1,9 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import PageControlledInput from './pages/controlled-input/PageControlledInput'
 // import ReactComponent, { H1 } from './pages/home'
 // import ProductsPage from './pages/products'
-import PageInputForm from './pages/inputForm/PageInputForm'
 
 createRoot(document.getElementById('main')!).render(
   <StrictMode>
@@ -14,6 +14,7 @@ createRoot(document.getElementById('main')!).render(
     </ReactComponent> */}
     {/* <ProductsPage/> */}
     {/* <CounterPage/> */}
-    <PageInputForm/>
+    <PageControlledInput/>
+
   </StrictMode>,
 )

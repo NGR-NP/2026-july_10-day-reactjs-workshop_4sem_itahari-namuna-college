@@ -10,6 +10,8 @@ export default function PageInputForm() {
         const password = formData.get("password");
         console.log("username:", username);
         console.log("password:", password);
+        e.currentTarget.reset();   
+        
     }
     return (
         <main>
