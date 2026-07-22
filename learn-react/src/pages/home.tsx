@@ -5,9 +5,10 @@ type TypeReactComponent = React.ComponentProps<"div">
 
 
 const ReactComponent = ({children,...props}: TypeReactComponent) => {
+    console.log("ReactComponent rendered")
     return (
         <div {...props}>
-            <h1>React + TypeScript + Vite</h1>
+            <h1>React + TypeScript + Vite hello</h1>
             {children}
         </div>
     )

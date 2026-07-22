@@ -1,20 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import PageControlledInput from './pages/controlled-input/PageControlledInput'
-// import ReactComponent, { H1 } from './pages/home'
-// import ProductsPage from './pages/products'
+import AppRoutes from './routers'
 
 createRoot(document.getElementById('main')!).render(
   <StrictMode>
-    {/* <ReactComponent style={{ backgroundColor: "blue" }}>
-      <H1  style={{ color: "red" }} >
-        Hello, it's me tezz
-      </H1>
-    </ReactComponent> */}
-    {/* <ProductsPage/> */}
-    {/* <CounterPage/> */}
-    <PageControlledInput/>
-
+    <AppRoutes />
   </StrictMode>,
 )
