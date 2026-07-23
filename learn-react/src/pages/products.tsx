@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Card, { CardBody, CardHeader } from "../componets/card"
 
 const DataProducts = [
@@ -28,34 +29,46 @@ const DataProducts = [
 ]
 
 export default function ProductsPage() {
+    const [products, setProducts]=useState([])
+    async function getProducts() {
+        try {
+            const res = await fetch("https://fakestoreapi.com/products");
+            const data = await res.json();
+            return data;
+
+        } catch (err) {
+            console.error("Error fetching products:", err);
+        }
+
+    }
+    useEffect(
+        () => {
+            getProducts()
+        },
+        []
+    )
     return (
         <main>
             <div>
                 <h1>Products Page</h1>
             </div>
-            <div>
-                {/* <Card title={DataProducts.at(0)?.title!} description={DataProducts.at(0)?.description!}/>
-                
-                <Card title={DataProducts.at(1)?.title!} description={DataProducts.at(1)?.description!}/>
-                <Card title={DataProducts.at(2)?.title!} description={DataProducts.at(2)?.description!}/> */}
-            </div>
-            <div style={{padding:"2rem"}}>
+            <div style={{ padding: "2rem" }}>
 
-            {
-                DataProducts.map((data, idx) => {
-                    return (
-                        <Card
-                        id={`card-${idx}`}
-                            style={{ backgroundColor: "blue", padding: "10px", marginTop:"10px" }}
-                            key={idx}>
-                            <CardHeader id={`card-header-${idx}`} productTitle={data.productTitle} img={data.img} />
-                            <CardBody description={data.description} />
-                        </Card>
+                {
+                    DataProducts.map((data, idx) => {
+                        return (
+                            <Card
+                                id={`card-${idx}`}
+                                style={{ backgroundColor: "blue", padding: "10px", marginTop: "10px" }}
+                                key={idx}>
+                                <CardHeader id={`card-header-${idx}`} productTitle={data.productTitle} img={data.img} />
+                                <CardBody description={data.description} />
+                            </Card>
+                        )
+                    }
+
                     )
                 }
-
-                )
-            }
             </div>
 
         </main>

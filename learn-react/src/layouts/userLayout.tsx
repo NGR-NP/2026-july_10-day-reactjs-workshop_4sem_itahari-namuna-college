@@ -15,6 +15,9 @@ export default function UserLayout(){
                         <Link to="/counter">Counter</Link>
                     </li>
                     <li>
+                        <Link to="/product">Product</Link>
+                    </li>
+                    <li>
                         <Link to="/random">Random</Link>
                     </li>
                 </ul>
