@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card, { CardBody, CardHeader } from "../componets/card"
+import type { TypeProduct } from "../types/Types.product";
 
 const DataProducts = [
     {
@@ -29,18 +30,21 @@ const DataProducts = [
 ]
 
 export default function ProductsPage() {
-    const [products, setProducts]=useState([])
+    const [products, setProducts]=useState<TypeProduct[]>([])
+
     async function getProducts() {
         try {
             const res = await fetch("https://fakestoreapi.com/products");
             const data = await res.json();
-            return data;
+            setProducts(data)
 
         } catch (err) {
             console.error("Error fetching products:", err);
         }
-
     }
+
+
+
     useEffect(
         () => {
             getProducts()
@@ -55,14 +59,14 @@ export default function ProductsPage() {
             <div style={{ padding: "2rem" }}>
 
                 {
-                    DataProducts.map((data, idx) => {
+                    products?.map((data, idx) => {
                         return (
                             <Card
                                 id={`card-${idx}`}
                                 style={{ backgroundColor: "blue", padding: "10px", marginTop: "10px" }}
                                 key={idx}>
-                                <CardHeader id={`card-header-${idx}`} productTitle={data.productTitle} img={data.img} />
-                                <CardBody description={data.description} />
+                                <CardHeader id={`card-header-${idx}`} productTitle={data.title} img={data.image} />
+                                <CardBody description={data?.description} />
                             </Card>
                         )
                     }

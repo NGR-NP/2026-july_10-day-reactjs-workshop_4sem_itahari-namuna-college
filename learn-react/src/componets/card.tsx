@@ -22,7 +22,7 @@ interface CardHeaderProps extends Omit<Props, "description">, React.ComponentPro
 
 export function CardHeader({ productTitle, img,...props }: CardHeaderProps) { // Omit: remove description from Props type
     return (
-        <div className="card-header" style={{aspectRatio: "16/9", height:"8rem"}} {...props}>
+        <div className="card-header" style={{aspectRatio: "16/9", height:"8rem",overflow:"hidden"}} {...props}>
             <img src={img}  alt={productTitle}  style={{width: "100%", height:"100%", objectFit: "cover"}}/>
             <h3>{productTitle}</h3>
         </div>
