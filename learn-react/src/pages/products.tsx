@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card, { CardBody, CardHeader } from "../componets/card"
 import type { TypeProduct } from "../types/Types.product";
+import { Link } from "react-router";
 
 const DataProducts = [
     {
@@ -61,13 +62,16 @@ export default function ProductsPage() {
                 {
                     products?.map((data, idx) => {
                         return (
+
+                           <Link to={String(data.id)} key={idx}>
                             <Card
                                 id={`card-${idx}`}
                                 style={{ backgroundColor: "blue", padding: "10px", marginTop: "10px" }}
-                                key={idx}>
+                                >
                                 <CardHeader id={`card-header-${idx}`} productTitle={data.title} img={data.image} />
                                 <CardBody description={data?.description} />
                             </Card>
+                           </Link>
                         )
                     }
 
