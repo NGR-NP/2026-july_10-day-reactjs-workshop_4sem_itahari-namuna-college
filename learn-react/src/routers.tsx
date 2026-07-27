@@ -5,6 +5,7 @@ import NotFoundPage from "./pages/404notfound";
 import CounterPage from "./pages/counter/counter";
 import ProductsPage from "./pages/products";
 import SingleProduct from "./pages/singleProduct";
+import ContactPage from "./pages/contact";
 
 export default function AppRoutes() {
     console.log("AppRoutes rendered")
@@ -15,11 +16,11 @@ export default function AppRoutes() {
                     <Route index element={<ReactComponent />} />
                     <Route path="counter" element={<CounterPage />} />
                     <Route path="product" >
-                        <Route index element={<ProductsPage/>}/>
-                        <Route path=":productID" element={<SingleProduct/>}/>
+                        <Route index element={<ProductsPage />} />
+                        <Route path=":productID" element={<SingleProduct />} />
                     </Route>
-
-                    <Route path="*" element={<NotFoundPage/>} />
+                    <Route path="contact" element={<ContactPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
                 </Route>
 
             </Routes>
