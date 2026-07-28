@@ -6,6 +6,8 @@ import CounterPage from "./pages/counter/counter";
 import ProductsPage from "./pages/products";
 import SingleProduct from "./pages/singleProduct";
 import ContactPage from "./pages/contact";
+import UserListPage from "./pages/userListPage";
+import LoginPage from "./pages/login";
 
 export default function AppRoutes() {
     console.log("AppRoutes rendered")
@@ -20,9 +22,13 @@ export default function AppRoutes() {
                         <Route path=":productID" element={<SingleProduct />} />
                     </Route>
                     <Route path="contact" element={<ContactPage />} />
+
+                    <Route path="users" element={<UserListPage />} />
+                    
                     <Route path="*" element={<NotFoundPage />} />
                 </Route>
-
+                <Route path="login" element={<LoginPage/>}/>
+        
             </Routes>
         </BrowserRouter>
     )
